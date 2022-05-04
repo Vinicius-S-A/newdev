@@ -1,0 +1,27 @@
+programa
+{
+	
+cadeia Alunos[3] = {"Bruno", "João", "Maria"}
+	real Medias[3] = {0.0,0.0,0.0}
+	real Notas[3][3] = {{7.0,7.0,7.0}, 
+					{3.0,8.5,7.5}, 
+					{7.0,2.5,10.0}}
+	funcao inicio()
+	{
+	
+	
+	para(inteiro i=0; i < 3; i++){
+		
+			para(inteiro j=0; j < 3; j++){
+			Medias[i] = (Notas[i][j] + Medias[i])
+			
+			}
+			Medias[i] = Medias[i] / 3
+			escreva("\nMédia de ", Alunos[i],":", Medias[i])
+	}
+
+
+
+	
+	}
+}
