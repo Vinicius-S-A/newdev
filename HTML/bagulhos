@@ -1,0 +1,26 @@
+<h3>E</h3>
+// corpo
+
+<p>lol</p>
+// Parágrafo
+
+<div>
+  // "cubo"
+  <p>paragrafo <strong> xd</strong></p>
+  // Strong: deixa em negrito
+</div>
+
+<button> </button> //botão
+--------------------------
+<video> 
+
+<source>
+
+<audio>
+
+</video> //Video YT
+--------------------------
+<Header> </Header> //Título
+
+<Body> </Body> //corpo do site
+

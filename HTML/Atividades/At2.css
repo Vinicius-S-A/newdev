@@ -1,0 +1,67 @@
+:root {
+  background-color: #504f4fe7;
+}
+
+#Bodyy {
+  position: relative;
+  z-index: 1;
+  margin: 0px;
+  height: 629px;
+  width: 447px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 2px;
+  outline-color: #0720fd;
+  background-color: #ffffff;
+}
+
+#desc {
+  font-family: 'Jura';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24;
+  line-height: 4rem;
+  text-anchor: middle;
+  text-align: center;
+  font-weight: 700;
+  z-index: 1;
+  width: 106px;
+  height: 28px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  background-color: #ffffff00;
+}
+
+#desc2 {
+  font-family: 'Jura';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 28px;
+  text-anchor: middle;
+  text-align: center;
+  z-index: 1;
+  height: 284px;
+  width: 361px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 97px;
+  background-color: #ffffff00;
+}
+
+#butconfirm {
+  display: flex;
+  text-align: center;
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 38px 16px 32px;
+  gap: 16px;
+  position: relative;
+  width: 170px;
+  height: 50px;
+  background: #00856f;
+  border-radius: 80px;
+}

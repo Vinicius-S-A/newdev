@@ -1,0 +1,86 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  font-size: 62.5%;
+  background-color: #ffffff;
+}
+
+body {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#titulo{
+  font-family: 'Jura';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;  
+  text-transform: uppercase;
+  color: #FFFFFF;
+
+margin-top: 10px;
+margin-right: auto;
+margin-left: 26px;
+}
+
+#bodyy{
+  width: 600px;
+  height: 629px;
+  
+  background: rgba(45, 49, 51, 0.81);
+}
+
+#thingy{
+ width: 549px;
+height: 281px;
+margin-top: 30px;
+margin-right: auto;
+margin-left: auto;
+
+background: #C4C4C4;
+}
+
+#thingy2{
+  width: 549px;
+ height: 150px;
+ margin-top: 10px;
+ margin-right: 26px;
+ margin-left: 26px;
+ font-family: 'DM Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+color: #ffffff;
+text-transform: uppercase;
+
+ }
+
+ #boton{
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 160px;
+  height: 50px;
+  margin-right: auto;
+  margin-left: 35%;
+  font-family: 'DM Sans';
+  font-weight: 400;
+  font-size: 24;
+  color: #FFFFFF;
+  background-color: #00856F;
+  border-radius: 80px;
+  text-transform: uppercase;
+  border-style: none;
+}
