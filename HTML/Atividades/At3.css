@@ -1,0 +1,32 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* dawdsawkljkjljkl
+*/
+#box {
+  border: 1px, solid, red;
+  width: 37.5rem;
+  height: 41.8rem;
+}
+
+#aud {
+  width: 100%;
+}

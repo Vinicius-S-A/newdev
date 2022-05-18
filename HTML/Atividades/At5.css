@@ -1,0 +1,144 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: #946363;
+  display: flex;
+}
+
+#bodyy {
+  width: 729px;
+  height: 803px;
+  background: #fffffd;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#IntroductionHolder {
+  width: 729px;
+  height: 100px;
+}
+
+#Titlee {
+  margin-top: 20px;
+
+  font-family: 'Inter';
+  color: #423431;
+  font-weight: 700;
+  font-size: 50;
+}
+#Titlee2 {
+  margin-top: 20px;
+  font-family: 'Inter';
+  color: #6a6b5f;
+  font-weight: 400;
+  font-size: 90;
+}
+
+#topbox {
+  align-items: center;
+
+  width: 731px;
+  height: 212px;
+  background: rgba(240, 92, 84, 0.86);
+  margin-bottom: 0px;
+}
+#imgholdertop {
+  margin-left: 25%;
+  align-items: center;
+}
+#imgholdertop2 {
+  margin-left: 10%;
+  align-items: center;
+}
+
+#titleimg {
+  margin-left: 25%;
+}
+
+img {
+  margin-left: 25%;
+}
+
+#bottombox {
+  align-items: center;
+  display: flex;
+  margin-top: 175px;
+  margin-bottom: 0px;
+  width: 729px;
+  height: 117px;
+
+  background: rgba(240, 92, 84, 0.86);
+}
+
+#bottomtext {
+  font-family: 'Inter';
+  color: #fff;
+  margin-left: 10px;
+  font-size: 30;
+  width: 500px;
+  height: 34px;
+}
+
+#bottomimageholder {
+  align-items: center;
+  display: flex;
+  margin-left: 90px;
+}
+
+#holder {
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+  width: 750px;
+  margin-top: 100px;
+}
+
+#R1 {
+  margin-left: 20px;
+  margin-right: 20px;
+  align-items: center;
+  width: 204px;
+  height: 191px;
+  background: #457d97;
+}
+#R1txt {
+  font-family: 'Inter';
+  text-align: justify;
+  margin-top: 45%;
+  color: #6a6b5f;
+}
+
+#R2 {
+  margin: 20px;
+  width: 204px;
+  height: 191px;
+  align-items: center;
+  background: #457d97;
+}
+#R2txt {
+  font-family: 'Inter';
+  text-align: justify;
+  margin-top: 45%;
+  color: #6a6b5f;
+}
+#R3 {
+  margin: 20px;
+  width: 204px;
+  height: 191px;
+  align-items: center;
+  object-position: 10px, 10px;
+  background: #457d97;
+}
+#R3txt {
+  font-family: 'Inter';
+  text-align: justify;
+  margin-top: 45%;
+  color: #6a6b5f;
+}

@@ -1,0 +1,119 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: #c76262;
+  display: flex;
+}
+
+#hull {
+  width: 700px;
+  height: 774px;
+  background: #4c4c47;
+}
+#topbar {
+  width: 700px;
+  height: 100px;
+
+  background: #2d2d2a;
+}
+#topbartxt {
+  color: #ffffff;
+  font-weight: 100;
+  font-family: 'Glory';
+  font-size: 60;
+  margin-top: 10px;
+  margin-left: 33%;
+}
+
+#titlee {
+  color: #ffffff;
+  font-weight: 100;
+  font-family: 'Glory';
+  font-size: 30;
+  margin-top: 55px;
+  margin-left: 10px;
+}
+#professorbrunosocorroeunaoaguentomaisprogramaremhtmlmeudeuseuodeiohtmlaaaaaaaaaaaa {
+  color: #ffffff;
+  font-weight: 100;
+  text-align: justify;
+  font-family: 'Glory';
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+#topbardetail {
+  width: 700px;
+  height: 9px;
+
+  background: #e5dcc5;
+}
+
+#holder {
+  align-items: center;
+  padding: 5px;
+  margin-top: 13%;
+  margin-left: 0px;
+  width: 700px;
+  height: 350px;
+  background: #2d2d2a;
+  z-index: 1;
+}
+#blk1 {
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin-left: 0px;
+  border-radius: 20;
+  margin: 10px;
+  background: #ffffff;
+  z-index: 10;
+}
+#blk2 {
+  align-items: center;
+  width: 100px;
+  margin-left: 0px;
+  height: 100px;
+  border-radius: 20;
+  margin: 10px;
+  background: #ffffff;
+  z-index: 10;
+}
+#blk3 {
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 20;
+  margin: 10px;
+  background: #ffffff;
+  z-index: 10;
+}
+#bottombar {
+  margin-top: 5%;
+  width: 700px;
+  height: 154px;
+  align-items: center;
+  display: flex;
+  background: #848fa5;
+}
+
+#bottombartxt {
+  color: #ffffff;
+  font-weight: 100;
+  font-family: 'Glory';
+  font-size: 60;
+  margin-left: 26%;
+}
+
+#bottomdetail {
+  margin-top: 5%;
+  width: 700px;
+  height: 9px;
+
+  background: #e5dcc5;
+}
