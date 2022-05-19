@@ -27,7 +27,7 @@ body {
   font-family: 'Glory';
   font-size: 60;
   margin-top: 10px;
-  margin-left: 33%;
+  margin-left: 36%;
 }
 
 #titlee {
@@ -38,7 +38,7 @@ body {
   margin-top: 55px;
   margin-left: 10px;
 }
-#professorbrunosocorroeunaoaguentomaisprogramaremhtmlmeudeuseuodeiohtmlaaaaaaaaaaaa {
+#desc {
   color: #ffffff;
   font-weight: 100;
   text-align: justify;
@@ -55,6 +55,7 @@ body {
 }
 
 #holder {
+  background-image: url('https://i.pinimg.com/originals/fd/34/72/fd3472f50c7e0dc52e99f29b9e0fb440.png');
   align-items: center;
   padding: 5px;
   margin-top: 13%;
@@ -66,33 +67,92 @@ body {
 }
 #blk1 {
   align-items: center;
+  display: flex;
   width: 100px;
   height: 100px;
   margin-left: 0px;
-  border-radius: 20;
+  border-radius: 20px;
   margin: 10px;
   background: #ffffff;
-  z-index: 10;
 }
+#blk1holder{
+  align-items: center;
+  display: flex;
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+  margin: 10px;
+  background: #ffffff;
+}
+#blk1txt{
+  font-family: 'Inter';
+  font-size: 20px;
+  width: 345px;
+  height: 90px;
+  margin: 10px;
+
+  color: #ffffff;
+}
+
+
+
+
 #blk2 {
   align-items: center;
+  display: flex;
   width: 100px;
   margin-left: 0px;
   height: 100px;
-  border-radius: 20;
+  border-radius: 20px;
   margin: 10px;
   background: #ffffff;
-  z-index: 10;
+}
+#blk2txt{
+  font-family: 'Inter';
+  font-size: 20px;
+  width: 345px;
+  height: 90px;
+  margin: 10px;
+
+  color: #ffffff;
+}
+
+#blk2holder{
+  align-items: center;
+  display: flex;
+  width: 80px;
+  height: 80px;
+  margin-left: 100px;
+  margin: 20px;
+  background: #ffffff;
 }
 #blk3 {
   align-items: center;
+  display: flex;
   width: 100px;
   height: 100px;
-  border-radius: 20;
+  border-radius: 20px;
   margin: 10px;
   background: #ffffff;
-  z-index: 10;
 }
+#blk3holder{
+  align-items: center;
+  display: flex;
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+  margin: 10px;
+  background: #ffffff;
+}
+#blk3txt{
+  font-family: 'Inter';
+  font-size: 18px;
+  width: 345px;
+  height: 90px;
+  margin: 10px;
+  color: #ffffff;
+}
+
 #bottombar {
   margin-top: 5%;
   width: 700px;
