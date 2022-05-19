@@ -1,9 +1,9 @@
-html,
-body {
-}
+
 
 body {
   align-items: center;
+  background-image: url("https://media.istockphoto.com/vectors/hot-dogs-with-sausage-tomato-ketchup-and-mustard-sauce-seamless-hot-vector-id944035700?k=20&m=944035700&s=612x612&w=0&h=kj0G2aXGhJHu7xvNkAweQ2IkS6zdxZeQfY_1QWYiHCU=");
+  background-size: 300px;
 }
 
 header,
@@ -17,9 +17,21 @@ footer {
   margin-right: auto;
 }
 
+
+footer{
+margin-bottom: 50rem;
+align-items: center;
+display: flex;
+flex-direction: column;
+background-color: #c2c2c2;
+}
+
+
 main {
   align-items: center;
   display: flex;
+  background-color: #a19494;
+
 }
 
 main section h1 {
@@ -43,7 +55,11 @@ header {
   justify-content: space-between;
   align-items: center;
   display: flex;
+  background-color: #c75e5e;
+
 }
+
+
 
 ul {
   list-style-type: none;
@@ -63,10 +79,49 @@ p {
 }
 
 a {
-  color: cadetblue;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
 a:hover {
   color: black;
+}
+
+
+.social .fa-twitter:hover{
+  color: blueviolet;
+  cursor: pointer;
+}
+
+.social .fa-instagram:hover{
+  color: red;
+  cursor: pointer;
+}
+
+.social .fa-facebook:hover{
+  color: rgb(78, 78, 134);
+  cursor: pointer;
+}
+.botoes{
+  margin-left: 33%;
+}
+.botoes button{
+text-transform: uppercase;
+border-radius: 20px;
+border-color: #ffffff;
+font-family: 'Raleway';
+font-weight: 500;
+font-size: 20px;
+height: 30px;
+width: 120px;
+}
+
+h4{
+  width: 50px;
+  font-size: 40px;
+  font-family: 'Raleway';
+}
+
+#cardapio ul{
+  height: 10px;
 }
