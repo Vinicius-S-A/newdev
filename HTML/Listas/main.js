@@ -1,0 +1,42 @@
+// POO - Programação orientada a objetos
+// Atributos e metodos(Funções)
+// Exemplos de atributos: Cor, Altura, etc
+// Exemplos de Funções: freiar, acelerar, virarAdireita
+const folhadepapel = {
+  color: 'branco',
+  tamanho: 'A4'
+}
+
+//Variaveis não pode iniciar com números, caracteres expeciais, letra maiúscula
+//Devem possuir valor semântico (Fazer sentido), não "Banana" "n1" "x" 
+let nomeVariavel = 1
+let parcelas = 200
+// Uma constante não pode mudar seu tipo, só uma "let"
+const Opala = "gol"
+Opala = 1
+console.log(Opala)
+//
+
+const carro = {
+  cor: 'vermelho',
+  tamanho: '12m',
+  cavalos: "30000000000000",
+
+  andar: function (){
+    console.log('andando')
+  }
+}
+
+
+
+function ABC(){
+  console.log('somando valores')
+
+}
+
+
+
+
+
+
+ABC()
