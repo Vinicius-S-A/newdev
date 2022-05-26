@@ -28,3 +28,29 @@ const frase = document.createElement('p')
 frase.innerHTML = "chuva"
 document.getElementById('texto').appendChild(frase)
 
+// X veículos formam uma classe
+funcion Carro() {
+	return{
+	color: string
+	marca: string
+	modelo: string
+	cavalos: string
+	}
+}
+// vars
+funcion Carro(color, marca, modelo, cavalos) {
+	return{
+	color,
+	marca,
+	modelo,
+	cavalos
+	}
+}
+
+//chama o alert do browser
+alert('aaa!!!')
+
+
+
+
+

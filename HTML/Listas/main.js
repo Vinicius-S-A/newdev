@@ -13,14 +13,17 @@ function SendData() {
     email: inputEmailValue,
     message: inputMessageValue
   }
-
+  if (Data.length < 3){
   Data.push(message)
+  }else{
+    alert("vetor cheio")
+  }
 
   document.getElementById('forms1').reset()
   document.getElementById('forms2').reset()
   document.getElementById('forms3').reset()
 
-  console.log("AAAAAAAAAAA", Data)
+  console.log("Data", Data)
 }
 
 Botao.addEventListener('click', SendData)

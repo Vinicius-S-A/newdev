@@ -43,3 +43,5 @@ Func2()
 
 
 ABC()
+
+//objeto = instancia de uma classe
