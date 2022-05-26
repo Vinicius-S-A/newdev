@@ -42,7 +42,7 @@
     </header>
 
     <main class="main-Cnt">
-      <h2>Contato</h2>
+      <h2 id="texto">Contato</h2>
 
       <div class="Divisor">
         <div class="Fundo"></div>
@@ -51,47 +51,33 @@
           <div class="txt">Nome:</div>
 
           <Holder class="Holder">
-            <form class="CaixaDeTexto3">
-                
-              <input type="text" required placeholder="Nome">
-
-              
-
+            <form class="CaixaDeTexto3" id="forms1">
+              <input type="text" required placeholder="Nome" id="name" />
             </form>
           </Holder>
           <div class="Nome">
             <div class="txt">Email:</div>
 
             <Holder class="Holder">
-              <form class="CaixaDeTexto3">
-                
-                <input type="text" required placeholder="Email">
-
-                
-
+              <form class="CaixaDeTexto3" id="forms2">
+                <input type="text" required placeholder="Email" id="email" />
               </form>
             </Holder>
           </div>
           <div class="Nome">
             <div class="txt">Sua Mensagem:</div>
 
-            <form class="CaixaDeTexto3">
-                
-              <input type="text"
-              required
-              placeholder="Sua Mensagem"
-              >
-              
-              
-
+            <form class="CaixaDeTexto3" id="forms3">
+              <input
+                type="text"
+                id="message"
+                required
+                placeholder="Sua Mensagem"
+              />
             </form>
           </div>
 
-          <button type="submit" class="buttoon">
-          Enviar
-          </button>
-
-
+          <button type="submit" class="buttoon" id="buttoon">Enviar</button>
         </div>
       </div>
     </main>

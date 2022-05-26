@@ -1,42 +1,32 @@
-// POO - Programação orientada a objetos
-// Atributos e metodos(Funções)
-// Exemplos de atributos: Cor, Altura, etc
-// Exemplos de Funções: freiar, acelerar, virarAdireita
-const folhadepapel = {
-  color: 'branco',
-  tamanho: 'A4'
-}
+const Botao = document.getElementById('buttoon')
+const Data = [2][2]
 
-//Variaveis não pode iniciar com números, caracteres expeciais, letra maiúscula
-//Devem possuir valor semântico (Fazer sentido), não "Banana" "n1" "x" 
-let nomeVariavel = 1
-let parcelas = 200
-// Uma constante não pode mudar seu tipo, só uma "let"
-const Opala = "gol"
-Opala = 1
-console.log(Opala)
-//
+function SendData() {
+  event.preventDefault() //Desabilita o evento padrão do elemento
+  const inputNameValue = document.getElementById('name').value
+  const inputEmailValue = document.getElementById('email').value
+  const inputMessageValue = document.getElementById('message').value
 
-const carro = {
-  cor: 'vermelho',
-  tamanho: '12m',
-  cavalos: "30000000000000",
+  Data
 
-  andar: function (){
-    console.log('andando')
+  console.log(
+    'Nome:',
+    inputNameValue,
+    'Email:',
+    inputEmailValue,
+    'Mensagem:',
+    inputMessageValue
+  )
+
+  const message = {
+    name: inputNameValue,
+    email: inputEmailValue,
+    message: inputMessageValue
   }
+
+  document.getElementById('forms1').reset()
+  document.getElementById('forms2').reset()
+  document.getElementById('forms3').reset()
 }
 
-
-
-function ABC(){
-  console.log('somando valores')
-
-}
-
-
-
-
-
-
-ABC()
+Botao.addEventListener('click', SendData)

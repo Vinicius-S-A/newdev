@@ -1,0 +1,30 @@
+//Buscando Elementos dentro da página HTML
+
+
+//Busca o elemento pelo ID do elemento
+const buttonSendMessage = document.getElementById('buttoon')
+
+//querySelector retorna todos os elementos em um array
+
+const inputs = document.querySelectorAll('input')
+const txt = document.querySelectorAll('texto')
+//querySelector retorna o primeiro elemento que ele encontrar
+const input1 = document.querySelector('input')
+
+
+console.log('buttonSendMessage:', buttonSendMessage)
+console.log('inputs:',inputs) 
+//Pega uma posição do vetor
+console.log('input3:',inputs[2]) 
+
+console.log('texts:',txt)
+console.log('first input:',input1)
+
+// Buscando pel classe
+const social = document.querySelector('.social')
+console.log('Social:',social)
+// Criando um elemento
+const frase = document.createElement('p')
+frase.innerHTML = "chuva"
+document.getElementById('texto').appendChild(frase)
+
