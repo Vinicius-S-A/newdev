@@ -1,5 +1,5 @@
 const Botao = document.getElementById('buttoon')
-const Data = [2][2]
+const Data = []
 
 function SendData() {
   event.preventDefault() //Desabilita o evento padrão do elemento
@@ -7,16 +7,6 @@ function SendData() {
   const inputEmailValue = document.getElementById('email').value
   const inputMessageValue = document.getElementById('message').value
 
-  Data
-
-  console.log(
-    'Nome:',
-    inputNameValue,
-    'Email:',
-    inputEmailValue,
-    'Mensagem:',
-    inputMessageValue
-  )
 
   const message = {
     name: inputNameValue,
@@ -24,9 +14,13 @@ function SendData() {
     message: inputMessageValue
   }
 
+  Data.push(message)
+
   document.getElementById('forms1').reset()
   document.getElementById('forms2').reset()
   document.getElementById('forms3').reset()
+
+  console.log("AAAAAAAAAAA", Data)
 }
 
 Botao.addEventListener('click', SendData)
