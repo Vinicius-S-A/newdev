@@ -36,6 +36,16 @@ const onClickEdit = function (lineEditing) {
 const onClickRemove = function (lineEditing) {
   lineEditing.remove()
 }
+
+const onClickUp = function (lineEditing) {
+
+
+}
+const onClickDown = function (lineEditing) {
+
+
+}
+
 function Send(event) {
   event.preventDefault()
   const from = document.getElementById('from')
@@ -78,7 +88,8 @@ function Send(event) {
   ///////////////////////////////////////
   const tdButtonEdit = document.createElement('td')
   const tdButtonRemove = document.createElement('td')
-
+  const tdButtonUp = document.createElement('td')
+  const tdButtonDown = document.createElement('td')
   const iconEdit = document.createElement('i')
   iconEdit.setAttribute('class', 'fas fa-edit')
   iconEdit.setAttribute('style', 'cursor:pointer')
@@ -86,17 +97,27 @@ function Send(event) {
   const iconRemove = document.createElement('i')
   iconRemove.setAttribute('class', 'fas fa-trash')
   iconRemove.setAttribute('style', 'cursor:pointer')
+
+const iconUp = document.createElement('i')
+iconUp.setAttribute('class', 'fas fa-arrow-up')
+iconUp.setAttribute('style', 'cursor:pointer')
+
+const iconDown = document.createElement('i')
+iconDown.setAttribute('class', 'fas fa-arrow-down')
+iconDown.setAttribute('style', 'cursor:pointer')
+
   tdButtonEdit.appendChild(iconEdit)
-
-
   tdButtonRemove.appendChild(iconRemove)
-
+  tdButtonUp.appendChild(iconUp)
+  tdButtonDown.appendChild(iconDown)
 
   tr.appendChild(tdfrom)
   tr.appendChild(tdto)
   tr.appendChild(tdmsg)
   tr.appendChild(tdButtonEdit)
   tr.appendChild(tdButtonRemove)
+  tr.appendChild(tdButtonUp)
+  tr.appendChild(tdButtonDown)
 
   // precisamos indentificar o ID
   tr.setAttribute('id', `line${countRow}`)
@@ -110,6 +131,16 @@ function Send(event) {
   tdButtonRemove.setAttribute(
     'onclick',
     `onClickRemove(${tdButtonRemove.parentElement.id})`
+  )
+
+  tdButtonUp.setAttribute(
+    'onclick',
+    `onClickUp(${tdButtonUp.parentElement.id})`
+  )
+
+  tdButtonDown.setAttribute(
+    'onclick',
+    `onClickDown(${tdButtonDown.parentElement.id})`
   )
 
   document.getElementById('form-message').reset()
