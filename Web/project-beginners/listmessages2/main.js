@@ -2,10 +2,8 @@ const buttonAddMessage = document.getElementById('addButton')
 let countRow = 0
 let lineToBeEdited = null
 
-
 const onClickEdit = function (lineEditing) {
   lineToBeEdited = lineEditing
-
 
   //foreach é uma função que percorre todos os elementos do vetor
   //const tbody = document.getElementById('tbody-messages')
@@ -29,21 +27,61 @@ const onClickEdit = function (lineEditing) {
   document.getElementById('from').value = fromValue.innerHTML
   document.getElementById('to').value = toValue.innerHTML
   document.getElementById('textarea').innerHTML = messageValue.innerHTML
-
-
-
 }
 const onClickRemove = function (lineEditing) {
   lineEditing.remove()
 }
 
-const onClickUp = function (lineEditing) {
+const onClickDown = function (line) {
+  const value1 = line.childNodes[0].innerHTML
+  const value2 = line.childNodes[1].innerHTML
+  const value3 = line.childNodes[2].innerHTML
+  const children = line.parentElement.childNodes
 
+  for (i in children) {
+    if (children[i] == line) {
+      if (Number(i) < Number(children.length - 1)) {
+        const realLine = Number(i) + 1
+        console.log(i + 1)
 
+        line.childNodes[0].innerHTML =
+          children[realLine].childNodes[0].innerHTML
+        line.childNodes[1].innerHTML =
+          children[realLine].childNodes[1].innerHTML
+        line.childNodes[2].innerHTML =
+          children[realLine].childNodes[2].innerHTML
+        children[realLine].childNodes[0].innerHTML = value1
+        children[realLine].childNodes[1].innerHTML = value2
+        children[realLine].childNodes[2].innerHTML = value3
+      }
+    }
+  }
 }
-const onClickDown = function (lineEditing) {
 
+const onClickUp = function (line) {
+  const value1 = line.childNodes[0].innerHTML
+  const value2 = line.childNodes[1].innerHTML
+  const value3 = line.childNodes[2].innerHTML
+  const children = line.parentElement.childNodes
+  //console.log(line)
 
+  for (i in children) {
+    if (children[i] == line) {
+      if (i != 0) {
+        const realLine = i - 1
+
+        line.childNodes[0].innerHTML =
+          children[realLine].childNodes[0].innerHTML
+        line.childNodes[1].innerHTML =
+          children[realLine].childNodes[1].innerHTML
+        line.childNodes[2].innerHTML =
+          children[realLine].childNodes[2].innerHTML
+        children[realLine].childNodes[0].innerHTML = value1
+        children[realLine].childNodes[1].innerHTML = value2
+        children[realLine].childNodes[2].innerHTML = value3
+      }
+    }
+  }
 }
 
 function Send(event) {
@@ -98,13 +136,13 @@ function Send(event) {
   iconRemove.setAttribute('class', 'fas fa-trash')
   iconRemove.setAttribute('style', 'cursor:pointer')
 
-const iconUp = document.createElement('i')
-iconUp.setAttribute('class', 'fas fa-arrow-up')
-iconUp.setAttribute('style', 'cursor:pointer')
+  const iconUp = document.createElement('i')
+  iconUp.setAttribute('class', 'fas fa-arrow-up')
+  iconUp.setAttribute('style', 'cursor:pointer')
 
-const iconDown = document.createElement('i')
-iconDown.setAttribute('class', 'fas fa-arrow-down')
-iconDown.setAttribute('style', 'cursor:pointer')
+  const iconDown = document.createElement('i')
+  iconDown.setAttribute('class', 'fas fa-arrow-down')
+  iconDown.setAttribute('style', 'cursor:pointer')
 
   tdButtonEdit.appendChild(iconEdit)
   tdButtonRemove.appendChild(iconRemove)
@@ -120,8 +158,9 @@ iconDown.setAttribute('style', 'cursor:pointer')
   tr.appendChild(tdButtonDown)
 
   // precisamos indentificar o ID
-  tr.setAttribute('id', `line${countRow}`)
+
   countRow = countRow + 1
+  tr.setAttribute('id', `line${countRow}`)
 
   tdButtonEdit.setAttribute(
     'onclick',
@@ -140,22 +179,20 @@ iconDown.setAttribute('style', 'cursor:pointer')
 
   tdButtonDown.setAttribute(
     'onclick',
-    `onClickDown(${tdButtonDown.parentElement.id})`
+    `onClickDown(${tdButtonUp.parentElement.id})`
   )
 
   document.getElementById('form-message').reset()
 
-    if (lineToBeEdited) {
-      
-      const [fromUpdate, toUpdate, msgUpdate] = lineToBeEdited.childNodes
-      fromUpdate.innerHTML = message.Messagefrom
-      toUpdate.innerHTML = message.Messageto
-      msgUpdate.innerHTML = message.Messagemsg
-      lineToBeEdited = null
-    }else{
-      tbody.appendChild(tr)
-    }
-
+  if (lineToBeEdited) {
+    const [fromUpdate, toUpdate, msgUpdate] = lineToBeEdited.childNodes
+    fromUpdate.innerHTML = message.Messagefrom
+    toUpdate.innerHTML = message.Messageto
+    msgUpdate.innerHTML = message.Messagemsg
+    lineToBeEdited = null
+  } else {
+    tbody.appendChild(tr)
+  }
 }
 
 buttonAddMessage.addEventListener('click', Send)
