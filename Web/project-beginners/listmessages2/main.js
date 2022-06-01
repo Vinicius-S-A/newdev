@@ -1,90 +1,129 @@
 const buttonAddMessage = document.getElementById('addButton')
 let countRow = 0
+let lineToBeEdited = null
 
-const onClickEdit = function(idd) {
 
-  
+const onClickEdit = function (lineEditing) {
+  lineToBeEdited = lineEditing
+
+
+  //foreach é uma função que percorre todos os elementos do vetor
+  //const tbody = document.getElementById('tbody-messages')
+  //lineEditing.childNodes.array.forEach((valor, index) => {
+  //   console.log(valor)
+  //  console.log(index)
+  // })
+
+  //const fromValue = idd.childNodes[0].innerHTML
+  //const toValue = idd.childNodes[1].innerHTML
+  //const messageValue = idd.childNodes[2].innerHTML
+
+  //desestruturação de arrays ><><><><><><><><
+
+  // console.log('from Value : ', fromValue.innerHTML)
+  // console.log('to Value : ', toValue.innerHTML)
+  // console.log('message Value : ', messageValue.innerHTML)
+
+  const [fromValue, toValue, messageValue] = lineEditing.childNodes
+
+  document.getElementById('from').value = fromValue.innerHTML
+  document.getElementById('to').value = toValue.innerHTML
+  document.getElementById('textarea').innerHTML = messageValue.innerHTML
+
 
 
 }
-
-function Send(event){
+const onClickRemove = function (lineEditing) {
+  lineEditing.remove()
+}
+function Send(event) {
   event.preventDefault()
-const from = document.getElementById('from')
-const to = document.getElementById('to')
-const msg = document.querySelector('textarea')
+  const from = document.getElementById('from')
+  const to = document.getElementById('to')
+  const msg = document.querySelector('textarea')
 
-if (from.value.length == 0 ) {
-alert('O autor deve ser informado')
-return
-}
-if (to.value.length == 0 ) {
-  alert('O destinatário deve ser informado')
-  return
-}
-if (msg.value.length == 0 ) {
-  alert('A mensagem deve ser informada')
-  return
-}
+  if (from.value.length == 0) {
+    alert('O autor deve ser informado')
+    return
+  }
+  if (to.value.length == 0) {
+    alert('O destinatário deve ser informado')
+    return
+  }
+  if (msg.value.length == 0) {
+    alert('A mensagem deve ser informada')
+    return
+  }
   const message = {
     Messagefrom: from.value,
     Messageto: to.value,
     Messagemsg: msg.value
   }
   console.log(message)
-  
 
-const sessionMessages = document.getElementById('section-messages')
+  const sessionMessages = document.getElementById('section-messages')
 
-const tbody = document.getElementById('tbody-messages')
-const tr = document.createElement('tr')
-/////////////////////////////////////// TDS
-const tdfrom = document.createElement('td')
-tdfrom.innerHTML = message.Messagefrom
+  const tbody = document.getElementById('tbody-messages')
+  const tr = document.createElement('tr')
+  /////////////////////////////////////// TDS
+  const tdfrom = document.createElement('td')
+  tdfrom.innerHTML = message.Messagefrom
 
-const tdto = document.createElement('td')
-tdto.innerHTML = message.Messageto
+  const tdto = document.createElement('td')
+  tdto.innerHTML = message.Messageto
 
-const tdmsg = document.createElement('td')
-tdmsg.innerHTML = message.Messagemsg
+  const tdmsg = document.createElement('td')
+  tdmsg.innerHTML = message.Messagemsg
 
+  ///////////////////////////////////////
+  const tdButtonEdit = document.createElement('td')
+  const tdButtonRemove = document.createElement('td')
 
-///////////////////////////////////////
-const tdButtonEdit = document.createElement('td')
+  const iconEdit = document.createElement('i')
+  iconEdit.setAttribute('class', 'fas fa-edit')
+  iconEdit.setAttribute('style', 'cursor:pointer')
 
-
-
-
-
-
-
-const iconEdit = document.createElement('i')
-iconEdit.setAttribute('class', 'fas fa-edit')
-iconEdit.setAttribute('style', 'cursor:pointer')
-
-const iconRemove = document.createElement('i')
-iconRemove.setAttribute('class', 'fas fa-trash')
-iconRemove.setAttribute('style', 'cursor:pointer')
-tdButtonEdit.appendChild(iconEdit)
-
-tdButtonEdit.appendChild(iconRemove)
+  const iconRemove = document.createElement('i')
+  iconRemove.setAttribute('class', 'fas fa-trash')
+  iconRemove.setAttribute('style', 'cursor:pointer')
+  tdButtonEdit.appendChild(iconEdit)
 
 
-tr.appendChild(tdfrom)
-tr.appendChild(tdto)
-tr.appendChild(tdmsg)
-tr.appendChild(tdButtonEdit)
-
-//tdButtonEdit.setAttribute('onclick', `onClickEdit(${tdButtonEdit.parentNode})`)
-
-// precisamos indentificar o ID
-tr.setAttribute('id', countRow)
-countRow = countRow + 1
-tdButtonEdit.setAttribute('onclick', `onClickEdit(${tdButtonEdit.parentNode.id})`)
+  tdButtonRemove.appendChild(iconRemove)
 
 
-tbody.appendChild(tr)
+  tr.appendChild(tdfrom)
+  tr.appendChild(tdto)
+  tr.appendChild(tdmsg)
+  tr.appendChild(tdButtonEdit)
+  tr.appendChild(tdButtonRemove)
 
+  // precisamos indentificar o ID
+  tr.setAttribute('id', `line${countRow}`)
+  countRow = countRow + 1
+
+  tdButtonEdit.setAttribute(
+    'onclick',
+    `onClickEdit(${tdButtonEdit.parentElement.id})`
+  )
+
+  tdButtonRemove.setAttribute(
+    'onclick',
+    `onClickRemove(${tdButtonRemove.parentElement.id})`
+  )
+
+  document.getElementById('form-message').reset()
+
+    if (lineToBeEdited) {
+      
+      const [fromUpdate, toUpdate, msgUpdate] = lineToBeEdited.childNodes
+      fromUpdate.innerHTML = message.Messagefrom
+      toUpdate.innerHTML = message.Messageto
+      msgUpdate.innerHTML = message.Messagemsg
+      lineToBeEdited = null
+    }else{
+      tbody.appendChild(tr)
+    }
 
 }
 

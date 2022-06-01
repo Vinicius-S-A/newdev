@@ -1,67 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Roboto+Mono:wght@100&display=swap"rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Roboto+Mono:wght@100&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
-  <title>Document</title>
-  <script
-  src="https://kit.fontawesome.com/bd0d2153ec.js"
-  crossorigin="anonymous"
-></script>
-</head>
-<body>
-  
-  <main class="Container">
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/bd0d2153ec.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main class="Container">
       <h1>Adicionar Mensagens</h1>
-  
-    <form id="form-message" autocomplete="off">
-      <label for="de">De:</label>
-      <input id="from"type="text">
-    </form>
-  
-    <form id="form-message" autocomplete="off">
-      <label for="para">Para:</label>
-      <input id="to"type="text">
-    </form>
 
-    <form id="form-message" autocomplete="off">
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="textarea"type="text"></textarea>
-    </form>
+      <form id="form-message" autocomplete="off">
+        <label for="de">De:</label>
+        <input id="from" type="text" />
 
-    <button id="addButton">Adicionar</button>
+        <label for="para">Para:</label>
+        <input id="to" type="text" />
 
-  
-    <section id="section-messages">
-      <h4>
-        Mensagens:
-      </h4>
-      <table>
-        <tr>
-        <th>De:</th>
-        <th>Para:</th>
-        <th>Mensagem:</th>
-        <th>Ações:</th>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="textarea" type="text"></textarea>
+      </form>
 
-        </tr>
+      <button id="addButton">Adicionar</button>
 
-        
-        <tablebody id ="tbody-messages"></tablebody>
+      <section id="section-messages">
+        <h4>Mensagens:</h4>
+        <table>
+          <tr>
+            <th>De</th>
+            <th>Para</th>
+            <th>Mensagem</th>
+            <th>Ações</th>
+          </tr>
 
-      </table>
+          <tablebody id="tbody-messages"></tablebody>
+        </table>
+      </section>
+    </main>
 
-
-    </section>
-
-  </main>
-
-  <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
