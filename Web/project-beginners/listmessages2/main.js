@@ -42,8 +42,6 @@ const onClickDown = function (line) {
     if (children[i] == line) {
       if (Number(i) < Number(children.length - 1)) {
         const realLine = Number(i) + 1
-        console.log(i + 1)
-
         line.childNodes[0].innerHTML =
           children[realLine].childNodes[0].innerHTML
         line.childNodes[1].innerHTML =
