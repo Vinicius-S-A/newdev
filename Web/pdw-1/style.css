@@ -1,0 +1,89 @@
+*{
+  margin: 0%;
+
+}
+
+main{
+  display: flex;
+  align-items: center;
+  background-color: #000000e3;
+  background-image: url('https://qualfind.com/wp-content/uploads/2019/04/black-chrome-gradient-ui-gradient-background.jpg');
+  background-repeat: no-repeat;
+  height: 50rem;
+}
+
+.topbar{
+  width: 100%;
+  height: 100px;
+  background-color: #c73232e3;
+
+}
+.bottombar{
+  width: 100%;
+  height: 200px;
+  background-color: #000000e3;
+  display: flex;
+  align-items: center;
+}
+
+introduction{
+  width: 30rem;
+  height: 30rem;
+  margin-right: 6rem;
+  margin-left: 1rem;
+}
+
+holder{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0);
+  width: 30rem;
+  height: 40rem;
+  border-top: 25%;
+  background-repeat: no-repeat;
+  background-image: url('https://assets-global.website-files.com/614716f50b4f49202fdd0087/616949393cf90643c1403605_6423.png');
+  border-radius: 2rem;
+
+}
+
+h1, h4{
+  font-family: 'Roboto Mono';
+  color: #ffffff;
+}
+
+#formulario{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+label, input{
+  font-family: 'Roboto Mono';
+  color: #000000;
+  font-weight: 700;
+  width: 20rem;
+  /*border-radius: 10px; */
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+input{
+  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+#sendButton{
+  font-family: 'Roboto Mono';
+  color: #000000;
+  background-color: rgb(255, 255, 255, 1);
+  font-size: 20px;
+  font-weight: 700;
+  border: 0px;
+  width: 5rem;
+  height: 2rem;
+  cursor: pointer;
+}
