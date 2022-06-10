@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-html, boyd {
+html, body {
   height: 100%;
 }
 
@@ -14,16 +14,36 @@ html, boyd {
   font-size: 62.5%;
 }
 
+#topbar{
+  margin-top: 0%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0px solid beige;
+  height: 100px;
+  width: auto;
+  background-color: rgb(92, 165, 183);
+}
+
+#logo{
+  height: 90px;
+  width: 130px;
+  margin: 5px;
+}
+
 body {
   font-size: 1.6rem;
   font-family: 'Fira Code', monospace;
+  background-color: rgb(143, 167, 212);
 }
 
 form  {
   margin-top: 4rem !important;
-  margin: 0 auto;
+  margin: 0px;
+  padding-left: 0.2rem;
+
   display: grid;
-  width: 50%;
+  width: 30%;
+  margin-bottom: 2rem;
 }
 
 input, button {
@@ -45,16 +65,19 @@ button {
   cursor: pointer;
 }
 
-#list-section {
-  margin-top: 4rem;
-  display: flex;
-  justify-content: center;
+#listTitle{
+margin: 0 auto;
 }
 
-#search{
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+
+#list-section {
+  margin-left: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
 }
+
 
 ul {
   list-style: none;
@@ -62,7 +85,7 @@ ul {
   min-height: 28rem;
   overflow-y: auto;
   scrollbar-width: thin;
-  width: 60%;
+  width: 100%;
 }
 
 li {

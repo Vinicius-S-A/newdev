@@ -18,7 +18,9 @@ const onClickEdit = (element) => {
   let pessoaEncontrada = {
     name: '',
     age: '',
-    height: ''
+    height: '',
+    entrada: '',
+    saida: ''
   };
 
   peoples.forEach((pessoa, identificador) => {
@@ -26,12 +28,16 @@ const onClickEdit = (element) => {
       pessoaEncontrada.age = pessoa.age;
       pessoaEncontrada.name = pessoa.name;
       pessoaEncontrada.height = pessoa.height;
+      pessoaEncontrada.entrada = pessoa.entrada;
+      pessoaEncontrada.saida = pessoa.saida;
     }
   });
 
   document.getElementById('name').value = pessoaEncontrada.name;
   document.getElementById('age').value = pessoaEncontrada.age;
   document.getElementById('height').value = pessoaEncontrada.height;
+  document.getElementById('entrada').value = pessoaEncontrada.entrada;
+  document.getElementById('saida').value = pessoaEncontrada.saida;
 
   console.log('pessoaEncontrada', pessoaEncontrada);
 }
@@ -65,6 +71,8 @@ const salvarRegistroEditado = (registroSendoEditado) => {
       pessoa.name = registroSendoEditado.name;
       pessoa.age = registroSendoEditado.age;
       pessoa.height = registroSendoEditado.height;
+      pessoa.entrada = registroSendoEditado.entrada;
+      pessoa.saida = registroSendoEditado.saida;
     }
     return pessoa;
   })
@@ -117,8 +125,12 @@ const listPeoples = () => {
     li.innerHTML = 
     
     `Nome: ${item.name} 
-     Idade: ${item.age}, 
-     Altura: ${item.height}
+     Modelo: ${item.age} 
+     Quantidade: ${item.height}
+     Entrada: ${item.saida}
+     Saída: ${item.entrada}
+
+
      `;
 
     li.appendChild(span(identificador))
@@ -130,6 +142,7 @@ const listPeoples = () => {
 
 listPeoples();
 
+
 const addPeople = (event) => {
   event.preventDefault();
 
@@ -137,6 +150,8 @@ const addPeople = (event) => {
     name: document.getElementById('name').value,
     age: document.getElementById('age').value,
     height: document.getElementById('height').value,
+    entrada: document.getElementById('entrada').value,
+    saida: document.getElementById('saida').value,
   }
   console.log('after save registry', identificadorQueTaSendoEditado);
   if (identificadorQueTaSendoEditado || identificadorQueTaSendoEditado == 0) {
@@ -167,7 +182,6 @@ const leBanana = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
 var leBanana2 = leBanana.filter(function(item, index){
   if (item % 2 ){
-    
   }else{
     return item
   }
