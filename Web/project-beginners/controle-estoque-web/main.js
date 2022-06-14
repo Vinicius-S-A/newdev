@@ -1,193 +1,187 @@
-let peoples = [];
+let veiculos = []
 
-let identificadorQueTaSendoEditado = null;
+let vagas = 200
 
-const loadPeoples = () => {
-  const itemsJaArmazenados = localStorage.getItem('listaDePessoas');
-  return itemsJaArmazenados ? JSON.parse(itemsJaArmazenados) : [];
-}
+let editingCar = null
+
 
 const onClickEdit = (element) => {
-  const identificadorASerEncontrado = 
-    element.getAttribute('identificador');
 
-  identificadorQueTaSendoEditado = +identificadorASerEncontrado;
+  const finder = element.getAttribute('identificador')
+  editingCar = +finder
   
-  const peoples = loadPeoples();
-  console.log('carregar pessoas', peoples);
-  let pessoaEncontrada = {
+  const carros = load()
+  let carroEncontrado = {
     name: '',
-    age: '',
-    height: '',
+    modelo: '',
+    quant: '',
     entrada: '',
     saida: ''
-  };
+  }
 
-  peoples.forEach((pessoa, identificador) => {
-    if (identificador === +identificadorASerEncontrado) {
-      pessoaEncontrada.age = pessoa.age;
-      pessoaEncontrada.name = pessoa.name;
-      pessoaEncontrada.height = pessoa.height;
-      pessoaEncontrada.entrada = pessoa.entrada;
-      pessoaEncontrada.saida = pessoa.saida;
+  carros.forEach((carro, identificador) => {
+
+    if (identificador === +finder) {
+      carroEncontrado.modelo = carro.modelo
+      carroEncontrado.name = carro.name
+      carroEncontrado.quant = carro.quant
+      carroEncontrado.entrada = carro.entrada
+      carroEncontrado.saida = carro.saida
     }
-  });
 
-  document.getElementById('name').value = pessoaEncontrada.name;
-  document.getElementById('age').value = pessoaEncontrada.age;
-  document.getElementById('height').value = pessoaEncontrada.height;
-  document.getElementById('entrada').value = pessoaEncontrada.entrada;
-  document.getElementById('saida').value = pessoaEncontrada.saida;
+  })
 
-  console.log('pessoaEncontrada', pessoaEncontrada);
+  document.getElementById('name').value = carroEncontrado.name
+
+  document.getElementById('modelo').value = carroEncontrado.modelo
+
+  document.getElementById('quant').value = carroEncontrado.quant
+  document.getElementById('quant').style.backgroundColor ="rgba(255, 255, 255, 1)"
+
+  document.getElementById('entrada').value = carroEncontrado.entrada
+  document.getElementById('entrada').style.backgroundColor ="rgba(255, 255, 255, 1)"
+
+  document.getElementById('saida').value = carroEncontrado.saida
+  document.getElementById('saida').style.backgroundColor ="rgba(255, 255, 255, 1)"
 }
 
 const onClickRemove = (element) => {
-  const identificadorASerEncontrado = 
-    element.getAttribute('identificador');
-
-  const pessoas = loadPeoples()
-  pessoas.splice(identificadorASerEncontrado, 1)
-  localStorage.setItem('listaDePessoas', JSON.stringify(pessoas))
-  listPeoples()
+  const ident = element.getAttribute('identificador')
+  const cars = load()
+  cars.splice(ident, 1)
+  localStorage.setItem('listaDeCarros', JSON.stringify(cars))
+  list()
 }
 
-const deletarRegistro = (registroSendoEditado) => {
-  const pessoas = loadPeoples();
-  const pessoasAtualizadas = pessoas.splice(registroSendoEditado, 1)
+const load = () => {
+
+  const items = localStorage.getItem('listaDeCarros')
+
+  return items ? JSON.parse(items):[]
 
 
-  localStorage.setItem('listaDePessoas', JSON.stringify(pessoasAtualizadas));
-
-  identificadorQueTaSendoEditado = null;
-
-  listPeoples();
 }
 
-const salvarRegistroEditado = (registroSendoEditado) => {
-  const pessoas = loadPeoples();
-  const pessoasAtualizadas = pessoas.map((pessoa, index) => { 
-    if (identificadorQueTaSendoEditado === index) {
-      pessoa.name = registroSendoEditado.name;
-      pessoa.age = registroSendoEditado.age;
-      pessoa.height = registroSendoEditado.height;
-      pessoa.entrada = registroSendoEditado.entrada;
-      pessoa.saida = registroSendoEditado.saida;
+const save = (editing) => {
+  const updCars = load()
+  const upd = updCars.map((car, index) => { 
+    if (editingCar === index) {
+      car.modelo = editing.modelo
+      car.quant = editing.quant
+      car.entrada = editing.entrada
+      car.saida = editing.saida
     }
-    return pessoa;
+    return car
   })
 
-  localStorage.setItem('listaDePessoas', JSON.stringify(pessoasAtualizadas));
+  localStorage.setItem('listaDeCarros', JSON.stringify(upd))
 
-  identificadorQueTaSendoEditado = null;
+  editingCar = null
 
-  listPeoples();
-  document.querySelector('form').reset();
+  list()
+  document.querySelector('form').reset()
 }
 
 
 const span = (identificador) => {
-  const span = document.createElement('span');
-  const iconEdit = document.createElement('i');
-  iconEdit.setAttribute('class', 'fas fa-edit');
-  iconEdit.setAttribute('title', 'Editar');
+  const span = document.createElement('span')
+  const iconEdit = document.createElement('i')
+  iconEdit.setAttribute('class', 'fas fa-pen')
+  iconEdit.setAttribute('title', 'Editar')
+  iconEdit.setAttribute('identificador', `${identificador}`)
+  iconEdit.setAttribute('onclick', `onClickEdit(this)`)
+  iconEdit.setAttribute('style', 'cursor:pointer; margin-right: 1rem;')
+  span.appendChild(iconEdit)
 
-  iconEdit.setAttribute('identificador', `${identificador}`);
-  iconEdit.setAttribute('onclick', `onClickEdit(this)`);
-  iconEdit.setAttribute('style', 'cursor:pointer; margin-inline: 1rem;');
+  const iconRemove = document.createElement('i')
+  iconRemove.setAttribute('class', 'fas fa-x')
+  iconRemove.setAttribute('title', 'Remover')
+  iconRemove.setAttribute('identificador', `${identificador}`)
+  iconRemove.setAttribute('onclick', `onClickRemove(this)`)
+  iconRemove.setAttribute('style', 'cursor:pointer; margin-right: 1rem;')
+  span.appendChild(iconRemove)
 
-  span.appendChild(iconEdit);
-
-  const iconRemove = document.createElement('i');
-  iconRemove.setAttribute('class', 'fas fa-trash');
-  iconRemove.setAttribute('title', 'Remover');
-  iconRemove.setAttribute('identificador', `${identificador}`);
-  iconRemove.setAttribute('onclick', `onClickRemove(this)`);
-  iconRemove.setAttribute('style', 'cursor:pointer; margin-inline: 1rem;');
-
-  span.appendChild(iconRemove);
-  
-  return span;
+  return span
 } 
 
-const listPeoples = () => {
-  const peoples = loadPeoples();
-  
-  let ul = document.querySelector('ul');
+const list = () => {
+  const veiculos = load()
+  let ul = document.querySelector('ul')
   if (ul) {
-    ul.remove();
-  }
+
+    ul.remove()
   
-  ul = document.createElement('ul');
+  }
+  ul = document.createElement('ul')
  
-  peoples.forEach((item, identificador) => {
-    const li = document.createElement('li');
+  veiculos.forEach((item, finder) => {
+
+    const li = document.createElement('li')
     li.innerHTML = 
     
     `Nome: ${item.name} 
-     Modelo: ${item.age} 
-     Quantidade: ${item.height}
-     Entrada: ${item.saida}
-     Saída: ${item.entrada}
+    <br>
+     Modelo: ${item.modelo} 
+     <br>
+     Quantidade: ${item.quant}
+     <br>
+     Entrada: ${item.entrada}
+     <br>
+     Saída: ${item.saida}
+     <br>
+     `
 
-
-     `;
-
-    li.appendChild(span(identificador))
-    ul.appendChild(li);
-  });
+    li.appendChild(span(finder))
+    ul.appendChild(li)
+  })
   
-  document.getElementById('list-section').appendChild(ul);
+  document.getElementById('list-section').appendChild(ul)
+
 }
 
-listPeoples();
+const insert = (event) => {
 
+  event.preventDefault()
 
-const addPeople = (event) => {
-  event.preventDefault();
+  const car = {
 
-  const people = {
     name: document.getElementById('name').value,
-    age: document.getElementById('age').value,
-    height: document.getElementById('height').value,
-    entrada: document.getElementById('entrada').value,
-    saida: document.getElementById('saida').value,
+    modelo: document.getElementById('modelo').value,
+    quant: Number(0),
+    entrada: Number(0),
+    saida: Number(0),
+
   }
-  console.log('after save registry', identificadorQueTaSendoEditado);
-  if (identificadorQueTaSendoEditado || identificadorQueTaSendoEditado == 0) {
-    salvarRegistroEditado(people);
-    return;
+
+  if (editingCar || editingCar == 0) {
+
+    const editCar = {
+      name: document.getElementById('name').value,
+      modelo: document.getElementById('modelo').value,
+      quant: document.getElementById('quant').value,
+      entrada: document.getElementById('entrada').value,
+      saida: document.getElementById('saida').value,
+
+    }
+
+
+    save(editCar)
+    document.getElementById('quant').style.backgroundColor ="rgba(255, 255, 255, 0.5)"
+    document.getElementById('entrada').style.backgroundColor ="rgba(255, 255, 255, 0.5)"
+    document.getElementById('saida').style.backgroundColor ="rgba(255, 255, 255, 0.5)"
+
+    return
   }
-  
-  peoples = loadPeoples();
-
-  console.log('after save registry');
-  peoples.push(people);
-  
-  localStorage.setItem('listaDePessoas', JSON.stringify(peoples));
-
-  document.querySelector('form').reset();
-
-  listPeoples();
+  veiculos = load()
+  veiculos.push(car)
+  localStorage.setItem('listaDeCarros', JSON.stringify(veiculos))
+  document.querySelector('form').reset()
+  list()
 }
 
+list()
 
 
 
-const botaoDeAdicionar = document.getElementById('btn');
-botaoDeAdicionar.addEventListener('click', addPeople)
-
-
-const leBanana = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-
-var leBanana2 = leBanana.filter(function(item, index){
-  if (item % 2 ){
-  }else{
-    return item
-  }
-
-
-})
-
-
-console.log(leBanana2)
+const buttonAdd = document.getElementById('btn')
+buttonAdd.addEventListener('click', insert)

@@ -7,18 +7,24 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
   
   <title>Controle De Estoque</title>
 </head>
 
+
+
 <body>
+
   <div id="topbar">
-    <img src="jeep.png" alt="idk" id="logo">
 
   </div>
+  <div id="mainholder">
+
+  <div id="holder">
+  <div id="holder1child">
 
   <form>
 
@@ -26,17 +32,17 @@
     <label for="name">Carro</label>
     <input id="name" type="text">
 
-    <label for="age">Modelo</label>
-    <input id="age" type="text">
+    <label for="modelo">Modelo</label>
+    <input id="modelo" type="text">
 
-    <label for="height">Quantidade</label>
-    <input id="height" type="number">
+    <label for="quant">Quantidade</label >
+    <input id="quant" type="number" style="background-color: rgba(255, 255, 255, 0.5);">
 
     <label for="entrada">Entrada</label>
-    <input id="entrada" type="number">
+    <input id="entrada" type="number" style="background-color: rgba(255, 255, 255, 0.5);">
 
-    <label for="saida">Saida</label>
-    <input id="saida" type="number">
+    <label for="saida">Saída</label>
+    <input id="saida" type="number" style="background-color: rgba(255, 255, 255, 0.5);">
 
 
     <button id="btn">
@@ -50,13 +56,29 @@
     <h3 id="listTitle">Carros</h3>
 
   </section>
+  </div>
 
-  
-  <script src="https://kit.fontawesome.com/d1a9aca78a.js" crossorigin="anonymous"></script>
+  <div id="holder1child2">
+    <h3 id="vagas">Vagas: 200</h3>
+    <h3 id="entradas">Entradas: 0</h3>
+    <h3 id="saidas">Saidas: 0</h3>
+
+  </div>
+
+
+  </div>
+
+
+  <div id="holder2">
+  <img src="https://www.wsupercars.com/thumbnails-phone/Nissan/2021-Nissan-GT-R50-by-Italdesign-002.jpg" alt="" id="Image1">
+
+  <script src="https://kit.fontawesome.com/bd0d2153ec.js" crossorigin="anonymous"></script>
   <script src="main.js"></script>
 
+  </div>
+</div>
+<div id="bottombar"></div>
 
 </body>
-<bottombar></bottombar>
 
 </html>
