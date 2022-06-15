@@ -1,7 +1,11 @@
 let veiculos = []
 
-let vagas = 200
+let vagas = Number(localStorage.getItem('Vagas'))
+const display = document.getElementById('vagasDisplay')
+display.innerHTML = `Vagas: ${vagas}`
 
+let entradas = 0
+let saidas = 0
 let editingCar = null
 
 
@@ -32,45 +36,74 @@ const onClickEdit = (element) => {
   })
 
   document.getElementById('name').value = carroEncontrado.name
+  document.getElementById('name').style.backgroundColor ="rgba(255, 255, 255, 1)"
 
   document.getElementById('modelo').value = carroEncontrado.modelo
+  document.getElementById('modelo').style.backgroundColor ="rgba(255, 255, 255, 1)"
 
-  document.getElementById('quant').value = carroEncontrado.quant
-  document.getElementById('quant').style.backgroundColor ="rgba(255, 255, 255, 1)"
-
-  document.getElementById('entrada').value = carroEncontrado.entrada
+  //document.getElementById('entrada').value = carroEncontrado.entrada
   document.getElementById('entrada').style.backgroundColor ="rgba(255, 255, 255, 1)"
 
-  document.getElementById('saida').value = carroEncontrado.saida
+  //document.getElementById('saida').value = carroEncontrado.saida
   document.getElementById('saida').style.backgroundColor ="rgba(255, 255, 255, 1)"
 }
 
 const onClickRemove = (element) => {
   const ident = element.getAttribute('identificador')
   const cars = load()
+  cars.map((car, index) => {
+
+    if (Number(ident) == Number(index)) {
+     vagas = vagas + Number(car.quant)
+     localStorage.setItem(('Vagas'), Number(vagas))
+    
+     const display = document.getElementById('vagasDisplay')
+     display.innerHTML = `Vagas: ${vagas}`
+    }
+
+  })
+
+  
   cars.splice(ident, 1)
   localStorage.setItem('listaDeCarros', JSON.stringify(cars))
   list()
 }
 
 const load = () => {
-
   const items = localStorage.getItem('listaDeCarros')
-
-  return items ? JSON.parse(items):[]
-
-
+  return items ? JSON.parse(items) : []
 }
 
 const save = (editing) => {
   const updCars = load()
   const upd = updCars.map((car, index) => { 
+
     if (editingCar === index) {
+      const oldQuant = Number(car.quant)
+      const oldEntrada = Number(car.entrada)
+      const oldSaida = Number(car.saida) 
+      const newQuant = Number(editing.entrada) - Number(editing.saida)
+      if (Number(car.quant + newQuant) >= Number(0)){
       car.modelo = editing.modelo
-      car.quant = editing.quant
-      car.entrada = editing.entrada
-      car.saida = editing.saida
+      car.name = editing.name
+      car.quant = Number(car.quant) + newQuant
+      car.entrada = Number(editing.entrada) + oldEntrada
+      car.saida = Number(editing.saida) + oldSaida
+
+      localStorage.setItem(('Vagas'), Number(vagas) - newQuant)
+      vagas = vagas - newQuant
+      const display = document.getElementById('vagasDisplay')
+      display.innerHTML = `Vagas: ${vagas}`
+      }else{
+      alert('operação impossível')
+      car.modelo = car.modelo
+      car.name = car.name
+      car.quant = car.quant
+      car.entrada = car.entrada
+      car.saida = car.saida
     }
+    }
+    
     return car
   })
 
@@ -153,12 +186,14 @@ const insert = (event) => {
 
   }
 
-  if (editingCar || editingCar == 0) {
-
+  if (editingCar || editingCar == 0) {  
+    if (document.getElementById('saida').value >= 0 & document.getElementById('entrada').value <= Number(vagas) &
+    document.getElementById('entrada').value >= 0 & document.getElementById('saida').value <= 200
+    ){
     const editCar = {
       name: document.getElementById('name').value,
       modelo: document.getElementById('modelo').value,
-      quant: document.getElementById('quant').value,
+      quant: Number(0),
       entrada: document.getElementById('entrada').value,
       saida: document.getElementById('saida').value,
 
@@ -166,11 +201,29 @@ const insert = (event) => {
 
 
     save(editCar)
-    document.getElementById('quant').style.backgroundColor ="rgba(255, 255, 255, 0.5)"
+    //document.getElementById('quant').style.backgroundColor ="rgba(255, 255, 255, 0.5)"
     document.getElementById('entrada').style.backgroundColor ="rgba(255, 255, 255, 0.5)"
     document.getElementById('saida').style.backgroundColor ="rgba(255, 255, 255, 0.5)"
 
-    return
+
+    
+   }else{
+    alert('Um valor foi inválido, verifique se a saída é maior que 0 e a entrada menor ou igual a quantidade de vagas')
+    document.getElementById('entrada').style.backgroundColor ="rgba(255, 255, 255, 0.5)"
+    document.getElementById('saida').style.backgroundColor ="rgba(255, 255, 255, 0.5)"
+    const editCar = {
+      name: document.getElementById('name').value,
+      modelo: document.getElementById('modelo').value,
+      quant: Number(0),
+      entrada: Number(0),
+      saida: Number(0),
+
+    }
+
+    save(editCar)
+
+   }
+   return
   }
   veiculos = load()
   veiculos.push(car)
@@ -180,8 +233,6 @@ const insert = (event) => {
 }
 
 list()
-
-
 
 const buttonAdd = document.getElementById('btn')
 buttonAdd.addEventListener('click', insert)
