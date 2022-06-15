@@ -1,7 +1,14 @@
 let veiculos = []
 
+if (localStorage.length == 0){
+  localStorage.setItem('Vagas', 200)
+}
+
 let vagas = Number(localStorage.getItem('Vagas'))
 const display = document.getElementById('vagasDisplay')
+
+
+
 display.innerHTML = `Vagas: ${vagas}`
 
 let entradas = 0
@@ -236,3 +243,8 @@ list()
 
 const buttonAdd = document.getElementById('btn')
 buttonAdd.addEventListener('click', insert)
+document.addEventListener('keydown', function(){
+  console.log("AAAAAAAAAAAAAAAAAAAAAA")
+
+  const input = this.document.querySelector
+} )
