@@ -145,6 +145,7 @@ const span = (identificador) => {
 } 
 
 const list = () => {
+  document.getElementById('carFinder').value = ""
   const veiculos = load()
   let ul = document.querySelector('ul')
   if (ul) {
@@ -243,8 +244,52 @@ list()
 
 const buttonAdd = document.getElementById('btn')
 buttonAdd.addEventListener('click', insert)
-document.addEventListener('keydown', function(){
-  console.log("AAAAAAAAAAAAAAAAAAAAAA")
+document.addEventListener('keyup', function(){
+  const txt = document.getElementById('carFinder').value
 
-  const input = this.document.querySelector
-} )
+  if (txt == ""){
+    list()
+  }else{
+
+
+    listFromDisplay(txt)
+  }
+
+})
+
+const listFromDisplay = (txt) => {
+  const veiculos = load()
+  let ul = document.querySelector('ul')
+  if (ul) {
+
+    ul.remove()
+  
+  }
+  ul = document.createElement('ul')
+ 
+  veiculos.forEach((item, finder) => {
+    if (item.name.includes(txt)){
+    const li = document.createElement('li')
+    li.innerHTML = 
+    
+    `Nome: ${item.name} 
+    <br>
+     Modelo: ${item.modelo} 
+     <br>
+     Quantidade: ${item.quant}
+     <br>
+     Entrada: ${item.entrada}
+     <br>
+     Saída: ${item.saida}
+     <br>
+     `
+
+    li.appendChild(span(finder))
+    
+    ul.appendChild(li)
+  }
+  })
+  
+  document.getElementById('list-section').appendChild(ul)
+
+}

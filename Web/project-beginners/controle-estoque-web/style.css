@@ -65,7 +65,7 @@ h3{
   width: 40%;
   margin-top: 3rem;
   padding: 2px;
-  border-top: 1px solid #ffffff;
+  /*border-top: 1px solid #ffffff;*/
 }
 #mainholder{
   display: flex;
@@ -131,6 +131,11 @@ margin: 0 auto;
   margin-bottom: auto;
 }
 
+#carFinder{
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+
+}
 
 ul {
   list-style: none;
