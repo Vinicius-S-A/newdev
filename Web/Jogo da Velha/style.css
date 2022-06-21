@@ -1,0 +1,64 @@
+*{
+  margin: 0%;
+}
+
+.insertGui{
+height: 100px;
+width: 100px;
+background-color: #84ff00b9;
+margin: 10px;
+border-radius: 10px;
+cursor: pointer;
+}
+
+#refresh{
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAAZlBMVEX///8AAAD6+vqMjIz09PTx8fH39/fU1NRra2vc3NwkJCSXl5dSUlLo6OjR0dHk5OTFxcV1dXVdXV0tLS2tra0QEBCFhYVEREQJCQmzs7Ojo6O5ubmdnZ18fHxkZGQ8PDwbGxs0NDS2AoKxAAAEgklEQVRoge1b3ZqqMAy0CCICgrKiy4/C+7/k0dUmBaUtkJZz4dztfsjYNJkmaVytvvjii/8fcVnGy7GH7I71UuwV+0O0jAFc9sIpXYI+YICfZelZvrFO71wE/sizzl8yEXvr/EWH/9c6f5qJ/GvHNn9yFvmP9h3gIPI3iV3yOA1F/2fMt8edVOeG9XC2JABueT31uR8IrJCH2SduO+Ef1wPcNlbvrofJ2dY0e9lK2JnhyPMOMnJWmGVPd++UZzTHzSz7265fDqnjW/I779r3s9JdrTY3+Lsyyd49Xtiufq4VLRKZVLykKzT5K7+1ZPqkQ36EAEO/Cw2yi3klazCxqax4fdIK7FusK1zcEYNHrSd6nVhVJR//S41IYO9klDGY3mCelyP5qWtjh38xg6YX8vldP7heLmlQ6xPMaj6kksExy84Ga0xHkNqPJo5jk/n9L7IvUEh7aPolymhMLw5UrwyKQjchRV25EVVQzt8RedXzl5p846sRtsTFX4nYY56u6RzPsPMNVfG6H+FKMbg9WR6FJ7c6Jw/5oy1Z5b6Bw1N5RrqQRRJqOnRkbqrUMIWThrBt4UGpoIolcLycjl1IjRXOt4HvSVq5QTDv5NYH20eU7ELuJLc+WIm4evnh75Wn5uD3xPUDJIiZ9DHYI1r21Qqyc9lDoE/kHYtcx6ywReRpBiRQsjYwKC55swqOHZnuctGhlLwnQPhk28rDs6Vmx5g6D+c8DvdPYtF54MgNO0y/4b3imp4eDhN38BG4JyM9b54APR12K0/HPScCgmr4BhKk0UC/qlLTJ8vSw+oNtIw0jG9y7zVcDzzfQOBB7TQceBt+T2OgRb99vboZTrccUEZ6ep7ryxpSXBmzYQtNBHQDj5KH+AadyHu1Aa/dZG4FwUneU4EUWiYpWg9NgtbCQHfIT1xI9KVDJ/whSXROAiiKNNOF6KTefNhVuaJAQkrW03oCkg35vEMCd+OklzQb/taLonI9633NkQCjquQUGhERYdcWevDKlgmoE2WlATWGWk2hmU146kE8qTuFECJ0y4fFa4QzdsHIlA92XmfKA6pcKufH2wGdutnBC3MS53fgdZL6SgAun6TYyUct/g5cPoHyoyvrNmzwE/OzHtQR/bVAnM6eSMI4GqEjCZp/5pUC3sjtRrRJ0fvmuZ9wFTuqWYXmn1NwCWMn4yRcCP7pFZcwZ6UX8ghxdGE7SX4cwYLje7TC9k+aiY7FAYAJXcpQ+Phu9Om3F2edJrULOvNKIx1wzmc/viMbIcC9Ydpp7J2wfXigpv8E287HZghHd17sUmsoV1J351hn9Wl+WBcHxbyI35/tm9mZ9/tzsW04uAdB2PYebmZPt3hH1keWl0GvP+UFZf4+yEoyQd0bSv7DqY3qqkzT/T5Ny6qO2g8DvBei7qAfvb9bjYhurOhXzdYH7eh+8TaaLUNDPtLkVkMz0m/IKvK+3B1eoeUDUWHsFwP+WrEHzdrwtP4+HLRBFFr5qYrjF3XUmV3eRXXh2/yViOPGgZ+Wd6R+ELvWf6DyxRdfTMc/YDcrI8dSn1AAAAAASUVORK5CYII=');
+  background-size: 95px;
+
+}
+
+#messagesGui{
+  width: 400px;
+  height: 75px;
+  background-color: #ffffffb9;
+  border-radius: 10px;
+  margin: 50px;
+}
+
+#gameHolder{
+ margin: 20px; 
+}
+
+.guiHolder{
+  align-items: center;
+  display: flex;
+}
+
+body{
+  background-color: #000000e3;
+  background-image: url('https://images.pexels.com/photos/172276/pexels-photo-172276.jpeg?cs=srgb&dl=pexels-fwstudio-172276.jpg&fm=jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#gameTitle{
+  margin: 20px; 
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,h2,h3,h4{
+  font-family: 'Roboto';
+  font-weight: 700;
+  color: black;
+}
+
+
