@@ -1,7 +1,7 @@
 const database = require('../databases/knex');
 const logger = require('../utils/logger')
 
-exports.findAll = async (request, response) => {
+exports.listThemAll = async (request, response) => {
   try {
     const sql = await database.select('*').from('authors');
 
@@ -28,7 +28,6 @@ exports.create = async (request, response) => {
 
     return response.status(500).send({ error: error?.message || e });
   }
-
 }
 
 exports.getById = async (request, response) => {
