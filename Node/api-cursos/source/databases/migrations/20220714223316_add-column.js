@@ -15,6 +15,15 @@ exports.up = function (knex) {
       .references('id')
       .inTable('teachers')
       .onDelete('CASCADE')
+      
+      table
+      .integer('cursoId')
+      .unsigned()
+      .notNullable()
+      .references('id')
+      .inTable('cursos')
+      .onDelete('CASCADE')
+
   })
 }
 
@@ -32,5 +41,9 @@ exports.down = function (knex) {
 
     table.dropForeign('teacher')
     table.dropColumn('teacher')
+
+    table.dropForeign('cursoId')
+    table.dropColumn('cursoId')
+
   })
 }

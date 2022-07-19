@@ -23,5 +23,4 @@ routes.delete('/lessons/:id', lessons.delete)
 routes.put('/lessons/:id', lessons.update)
 routes.get('/lessons/:id', lessons.getById)
 
-
 module.exports = routes

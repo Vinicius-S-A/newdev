@@ -3,7 +3,7 @@ const database = require('../databases/knex');
 exports.listThemAll = async (req, res) => {
   try {
     const sql = await database.select([
-      'lessons.id', 'lessons.title','lessons.description','lessons.link', 'teachers.name as teacher'
+      'lessons.id', 'lessons.title','lessons.description','lessons.link', 'teachers.name as teacher', 'cursoId'
     ])
     .from('lessons').innerJoin('teachers','teachers.id', 'lessons.teacher')
 
@@ -115,3 +115,4 @@ exports.update = async (req, res) => {
     return res.status(500).send({ error: error?.message || e });
   }
 }
+

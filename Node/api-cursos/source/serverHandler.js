@@ -10,4 +10,4 @@ app.use(routes)
 
 app.listen(157, () => {
   console.log(`API is listening on port 157`)
-});
+})

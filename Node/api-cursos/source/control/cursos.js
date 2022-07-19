@@ -1,8 +1,5 @@
 const database = require('../databases/knex');
 
-
-
-
 exports.listThemAll = async (req, res) => {
   try {
     const sql = await database.select('*').from('cursos');
@@ -114,3 +111,4 @@ exports.update = async (req, res) => {
     return res.status(500).send({ error: error?.message || e });
   }
 }
+
